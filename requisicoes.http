@@ -1,0 +1,17 @@
+POST http://localhost:3333/courses
+Content-Type: application/json
+
+{
+  "title": "Curso de mongo.js",
+  "description": "Aprenda mongo.js do zero"
+}
+
+###
+GET http://localhost:3333/courses
+
+###
+GET http://localhost:3333/courses?orderBy=title
+
+###
+
+GET http://localhost:3333/courses/
