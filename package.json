@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "node --env-file .env --watch src/server.ts",
     "db:seed": "node --env-file .env src/database/seed.ts",
+    "seed:test": "dotenv -e .env.test tsx src/tests/seed-test-db.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
