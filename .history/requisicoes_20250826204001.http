@@ -1,0 +1,27 @@
+###
+POST http://localhost:3333/courses
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlOTEzMjkyMC0wYmNhLTQ1NjEtOGQzMC0wN2IxOTc4Yzk5Y2MiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc1NTIxNDAwNH0.NshpGUH8kPUSmZJOz2DqhyYW0EOiA-HzYHnikz_PXaU
+
+{
+  "title": "Curso de Next.js"
+}
+
+###
+
+GET http://localhost:3333/courses?orderBy=title
+
+###
+
+GET http://localhost:3333/courses/6c2ea3d8-21b0-4fd9-a179-67c0615fba13
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3YzI4MGNhMi0xNjdlLTRjZDEtOTBjOC1kODM4NmEzNmVlOWYiLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTc1NjI1MTQ1OH0.Aa35k2rArOXPg1QqqVAYKqD7JdyL19ONf752L0SZx9g
+
+###
+
+POST http://localhost:3333/sessions
+Content-Type: application/json
+
+{
+  "email": "Fabricia_Costa@bol.com.br",
+  "password": "123456"
+}
