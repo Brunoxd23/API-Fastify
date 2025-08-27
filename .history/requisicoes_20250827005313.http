@@ -13,7 +13,7 @@ GET http://localhost:3333/courses?orderBy=title
 
 ###
 
-GET http://localhost:3333/courses
+GET http://localhost:3333/courses/6c2ea3d8-21b0-4fd9-a179-67c0615fba13
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3YzI4MGNhMi0xNjdlLTRjZDEtOTBjOC1kODM4NmEzNmVlOWYiLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTc1NjI1MTQ1OH0.Aa35k2rArOXPg1QqqVAYKqD7JdyL19ONf752L0SZx9g
 
 ###

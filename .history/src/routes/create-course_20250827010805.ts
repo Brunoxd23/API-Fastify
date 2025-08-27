@@ -4,6 +4,7 @@ import { courses } from "../database/schema.ts";
 import z from "zod";
 import { checkRequestJWT } from "./hooks/check-request-jwt.ts";
 import { checkUserRole } from "./hooks/check-user-role.ts";
+import { desc } from "drizzle-orm";
 
 export const createCourseRoute: FastifyPluginAsyncZod = async (server) => {
   server.post(

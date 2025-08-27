@@ -4,6 +4,7 @@ import { courses } from "../database/schema.ts";
 import z from "zod";
 import { checkRequestJWT } from "./hooks/check-request-jwt.ts";
 import { checkUserRole } from "./hooks/check-user-role.ts";
+import { desc } from "drizzle-orm";
 
 export const createCourseRoute: FastifyPluginAsyncZod = async (server) => {
   server.post(
@@ -15,9 +16,7 @@ export const createCourseRoute: FastifyPluginAsyncZod = async (server) => {
         summary: "Create a course",
         body: z.object({
           title: z.string().min(5, "Título precisa ter 5 caracteres"),
-          description: z
-            .string()
-            .min(10, "Descrição precisa ter 10 caracteres"),
+          desc: z.string().min(10, "Descrição precisa ter 10 caracteres"),
         }),
         response: {
           201: z
@@ -28,11 +27,10 @@ export const createCourseRoute: FastifyPluginAsyncZod = async (server) => {
     },
     async (request, reply) => {
       const courseTitle = request.body.title;
-      const courseDescription = request.body.description;
 
       const result = await db
         .insert(courses)
-        .values({ title: courseTitle, description: courseDescription })
+        .values({ title: courseTitle })
         .returning();
 
       return reply.status(201).send({ courseId: result[0].id });

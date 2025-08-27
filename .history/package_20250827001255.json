@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "dotenv -e .env -- node --watch src/server.ts",
+  "dev": "dotenv -e .env -- node --watch src/server.ts",
     "db:seed": "node --env-file .env src/database/seed.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
