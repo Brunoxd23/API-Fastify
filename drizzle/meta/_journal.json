@@ -5,15 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1755141540855,
-      "tag": "0000_purple_gargoyle",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1755203259561,
-      "tag": "0001_jittery_machine_man",
+      "when": 1756250707349,
+      "tag": "0000_confused_energizer",
       "breakpoints": true
     }
   ]
