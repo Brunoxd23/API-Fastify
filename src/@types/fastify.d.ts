@@ -1,10 +1,8 @@
-import "fastify";
+import fastify from "fastify";
 
 declare module "fastify" {
-  interface FastifyRequest {
+  export interface FastifyRequest {
     user?: {
-      id?: string;
-      email?: string;
       sub: string;
       role: "student" | "manager";
     };

@@ -2,10 +2,6 @@ import type { FastifyRequest, FastifyReply } from "fastify";
 import jwt from "jsonwebtoken";
 
 type JWTPayload = {
-  user?: {
-    id: string;
-    email: string;
-  };
   sub: string;
   role: "student" | "manager";
 };

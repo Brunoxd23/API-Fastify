@@ -3,11 +3,13 @@
 API simples em Node.js + TypeScript usando Fastify, Drizzle ORM (PostgreSQL) e Zod. Inclui documentação Swagger/Scalar em ambiente de desenvolvimento.
 
 ## Requisitos
+
 - Node.js 22+
 - Docker e Docker Compose
 - npm (ou outro gerenciador, mas o projeto usa `package-lock.json`)
 
 ## Tecnologias
+
 - Fastify 5
 - TypeScript
 - Drizzle ORM + PostgreSQL
@@ -15,16 +17,22 @@ API simples em Node.js + TypeScript usando Fastify, Drizzle ORM (PostgreSQL) e Z
 - Swagger/OpenAPI + Scalar API Reference (em `/docs` quando `NODE_ENV=development`)
 
 ## Configuração
+
 1. Clone o repositório e acesse a pasta do projeto.
 2. Instale as dependências:
+
 ```bash
 npm install
 ```
+
 3. Suba o banco Postgres com Docker:
+
 ```bash
 docker compose up -d
 ```
-4. Crie um arquivo `.env` na raiz com:
+
+> **Nota**: Se preferir não usar Docker, você pode configurar uma instância PostgreSQL local e ajustar a `DATABASE_URL` no arquivo `.env` conforme necessário. 4. Crie um arquivo `.env` na raiz com:
+
 ```bash
 # URL do banco (Docker local padrão)
 DATABASE_URL=postgresql://postgres:postgres@localhost:5432/desafio
@@ -32,19 +40,46 @@ DATABASE_URL=postgresql://postgres:postgres@localhost:5432/desafio
 # Ativa docs em /docs
 NODE_ENV=development
 ```
+
 5. Rode as migrações (Drizzle):
+
 ```bash
 npm run db:migrate
 ```
-(opcional) Para inspecionar o schema/estado com o Drizzle Studio:
+
+6. (Opcional) Popule o banco com dados sementes:
+
+```bash
+npm run db:seed
+```
+
+7. (Opcional) Para inspecionar o schema/estado com o Drizzle Studio:
+
 ```bash
 npm run db:studio
 ```
 
+Acesse [http://localhost:4983](http://localhost:4983) no navegador para usar a interface.
+
+## Documentação da API com Fastify
+
+A documentação interativa da API é gerada automaticamente usando Fastify, Swagger/OpenAPI e Scalar API Reference.  
+Acesse [http://localhost:3333/docs](http://localhost:3333/docs) enquanto o servidor está rodando em modo desenvolvimento (`NODE_ENV=development`).
+
+- Teste endpoints diretamente pelo navegador
+- Veja exemplos de payloads e respostas
+- Schemas gerados automaticamente via Zod
+
+npm run db:studio
+
+````
+
 ## Executando o servidor
+
 ```bash
 npm run dev
 ```
+
 - Porta padrão: `http://localhost:3333`
 - Logs legíveis habilitados
 - Documentação da API (em dev): `http://localhost:3333/docs`
@@ -108,7 +143,7 @@ sequenceDiagram
   C->>S: GET /courses
   S->>DB: SELECT id,title FROM courses
   DB-->>S: lista
-  S-->>C: 200 {courses: [...]} 
+  S-->>C: 200 {courses: [...]}
 
   C->>S: GET /courses/:id
   S->>V: Validar param id (uuid)
@@ -120,18 +155,21 @@ sequenceDiagram
   else não encontrado
     S-->>C: 404
   end
-```
+````
 
 ## Scripts
+
 - `npm run dev`: inicia o servidor com reload e carrega variáveis de `.env`
 - `npm run db:generate`: gera artefatos do Drizzle a partir do schema
 - `npm run db:migrate`: aplica migrações no banco
 - `npm run db:studio`: abre o Drizzle Studio
 
 ## Dicas e solução de problemas
+
 - Conexão recusada ao Postgres: confirme `docker compose up -d` e que a porta `5432` não está em uso.
 - Variável `DATABASE_URL` ausente: verifique seu `.env`. O Drizzle exige essa variável para `db:generate`, `db:migrate` e `db:studio`.
 - Docs não aparecem em `/docs`: garanta `NODE_ENV=development` no `.env` e reinicie o servidor.
 
 ## Licença
+
 ISC (ver `package.json`).

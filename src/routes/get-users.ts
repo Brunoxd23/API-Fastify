@@ -1,32 +1,33 @@
 import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod";
 import { db } from "../database/client.ts";
-import { courses, enrollments } from "../database/schema.ts";
+import { courses, enrollments, users } from "../database/schema.ts";
 import { ilike, asc, type SQL, and, eq, count } from "drizzle-orm";
 import z from "zod";
 import { checkUserRole } from "./hooks/check-user-role.ts";
 import { checkRequestJWT } from "./hooks/check-request-jwt.ts";
 
-export const getCoursesRoute: FastifyPluginAsyncZod = async (server) => {
+export const getUsersRoute: FastifyPluginAsyncZod = async (server) => {
   server.get(
-    "/courses",
+    "/users",
     {
       schema: {
+        security: [{ bearerAuth: [] }],
         preHandler: [checkRequestJWT, checkUserRole("manager")],
-        tags: ["courses"],
-        summary: "Get all courses",
+        tags: ["users"],
+        summary: "Get all users",
         querystring: z.object({
           search: z.string().optional(),
-          orderBy: z.enum(["id", "title"]).optional().default("id"),
+          orderBy: z.enum(["id", "name"]).optional().default("id"),
           page: z.coerce.number().optional().default(1),
         }),
         response: {
           200: z.object({
-            courses: z.array(
+            users: z.array(
               z.object({
                 id: z.uuid(),
-                title: z.string(),
-                description: z.string().nullable(),
-                enrollments: z.number(),
+                name: z.string(),
+                email: z.string().email(),
+                role: z.enum(["student", "manager"]),
               })
             ),
             total: z.number(),
@@ -40,28 +41,27 @@ export const getCoursesRoute: FastifyPluginAsyncZod = async (server) => {
       const conditions: SQL[] = [];
 
       if (search) {
-        conditions.push(ilike(courses.title, `%${search}%`));
+        conditions.push(ilike(users.name, `%${search}%`));
       }
 
       const [result, total] = await Promise.all([
         db
           .select({
-            id: courses.id,
-            title: courses.title,
-            description: courses.description,
-            enrollments: count(enrollments.id),
+            id: users.id,
+            name: users.name,
+            email: users.email,
+            role: users.role,
           })
-          .from(courses)
-          .leftJoin(enrollments, eq(enrollments.courseId, courses.id))
-          .orderBy(asc(courses[orderBy]))
-          .offset((page - 1) * 10)
+          .from(users)
+          .orderBy(asc(users[orderBy]))
+          .offset((page - 1) * 2)
           .limit(10)
           .where(and(...conditions))
-          .groupBy(courses.id),
-        db.$count(courses, and(...conditions)),
+          .groupBy(users.id),
+        db.$count(users, and(...conditions)),
       ]);
 
-      return reply.send({ courses: result, total });
+      return reply.send({ users: result, total });
     }
   );
 };

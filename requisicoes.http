@@ -1,3 +1,4 @@
+###
 POST http://localhost:3333/courses
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlOTEzMjkyMC0wYmNhLTQ1NjEtOGQzMC0wN2IxOTc4Yzk5Y2MiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc1NTIxNDAwNH0.NshpGUH8kPUSmZJOz2DqhyYW0EOiA-HzYHnikz_PXaU
