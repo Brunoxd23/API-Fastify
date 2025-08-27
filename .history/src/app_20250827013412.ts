@@ -9,16 +9,16 @@ import {
   type ZodTypeProvider,
   jsonSchemaTransform,
 } from "fastify-type-provider-zod";
-// Importa plugin Scalar para docs interativas modernas
-import scalarAPIReference from "@scalar/fastify-api-reference";
 // Importa rotas da API
 import { createCourseRoute } from "./routes/create-course.ts";
 import { getCourseByIdRoute } from "./routes/get-course-by-id.ts";
 import { getCoursesRoute } from "./routes/get-courses.ts";
 import { getUserByIdRoute } from "./routes/get-users-by-id.ts";
+// Importa plugin Scalar para docs interativas modernas
+import scalarAPIReference from "@scalar/fastify-api-reference";
+import { loginRoute } from "./routes/login.ts";
 import { createUserRoute } from "./routes/create-user.ts";
 import { getUsersRoute } from "./routes/get-users.ts";
-import { loginRoute } from "./routes/login.ts";
 
 const server = fastify({
   logger: {
