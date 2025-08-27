@@ -10,6 +10,8 @@ export const createUserRoute: FastifyPluginAsync = async (server) => {
     "/users",
     {
       schema: {
+        tags: ["users"],
+        summary: "Create a new user",
         body: z.object({
           name: z.string().min(3),
           email: z.string().email(),
