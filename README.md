@@ -8,13 +8,55 @@ API simples em Node.js + TypeScript usando Fastify, Drizzle ORM (PostgreSQL) e Z
 - Docker e Docker Compose
 - npm (ou outro gerenciador, mas o projeto usa `package-lock.json`)
 
-## Tecnologias
+## 🛠️ Tecnologias utilizadas no projeto
 
-- Fastify 5
-- TypeScript
-- Drizzle ORM + PostgreSQL
-- Zod (validação)
-- Swagger/OpenAPI + Scalar API Reference (em `/docs` quando `NODE_ENV=development`)
+Este projeto foi desenvolvido utilizando um conjunto de ferramentas modernas que auxiliam na criação de uma API robusta, segura e com boa performance. Abaixo estão descritas as principais tecnologias utilizadas:
+
+---
+
+### ⚡ Fastify 5
+Framework web altamente performático, utilizado como servidor HTTP da aplicação.
+
+- Possui baixo overhead e excelente desempenho.
+- Arquitetura baseada em plugins, facilitando a extensibilidade e manutenção.
+- Ideal para aplicações Node.js modernas com foco em velocidade.
+
+---
+
+### 🧠 TypeScript
+Superset do JavaScript com tipagem estática.
+
+- Garante maior segurança e previsibilidade no desenvolvimento.
+- Facilita a leitura do código e reduz erros em tempo de execução.
+- Integra-se nativamente com todas as demais ferramentas do projeto.
+
+---
+
+### 🗃️ Drizzle ORM + PostgreSQL
+ORM leve e moderno para interação com o banco de dados relacional.
+
+- Fornece tipagem estática para queries e schemas.
+- Geração e controle de migrations de forma segura.
+- Facilita a manutenção de um banco PostgreSQL com integridade e produtividade.
+
+---
+
+### ✅ Zod (validação de dados)
+Biblioteca de validação de esquemas totalmente compatível com TypeScript.
+
+- Utilizada para validar dados de entrada: `body`, `query`, `params`.
+- Permite criar validações declarativas e reutilizáveis.
+- Excelente integração com Drizzle e Fastify.
+
+---
+
+### 📄 Swagger/OpenAPI + Scalar API Reference
+Ferramentas de documentação automática da API.
+
+- As rotas são documentadas automaticamente via Swagger/OpenAPI.
+- A interface de visualização utiliza o Scalar API Reference, moderna e interativa.
+- A documentação está disponível em `/docs` **apenas em ambiente de desenvolvimento** (`NODE_ENV=development`).
+
 
 ## Configuração
 
