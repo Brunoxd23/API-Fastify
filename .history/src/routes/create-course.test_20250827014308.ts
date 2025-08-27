@@ -4,24 +4,22 @@ import { server } from "../app.ts";
 import { faker } from "@faker-js/faker";
 import { makeAuthenticatedUser } from "../tests/factories/make-user.ts";
 
-test("create a users", async () => {
+test("create a course", async () => {
   await server.ready();
 
   const { token } = await makeAuthenticatedUser("manager");
 
   const response = await request(server.server)
-    .post("/users")
+    .post("/courses")
     .set("Content-Type", "application/json")
     .set("Authorization", token)
     .send({
-      name: faker.name.findName(),
-      email: faker.internet.email(),
-      password: faker.internet.password(),
-      role: "student",
+      title: faker.lorem.words(4),
+      description: faker.lorem.sentence(12), // garante mínimo de 10 caracteres
     });
 
   expect(response.status).toEqual(201);
   expect(response.body).toEqual({
-    userId: expect.any(String),
+    courseId: expect.any(String),
   });
 });

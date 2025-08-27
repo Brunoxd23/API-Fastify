@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/routes/get-courses.ts</title>
+    <title>Code coverage report for src/routes/get-users.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/routes</a> get-courses.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/routes</a> get-users.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">62.29% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>61/61</span>
+                <span class='fraction'>38/61</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">62.29% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>61/61</span>
+                <span class='fraction'>38/61</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -167,65 +167,66 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod";
 import { db } from "../database/client.ts";
-import { courses, enrollments } from "../database/schema.ts";
+import { courses, enrollments, users } from "../database/schema.ts";
 import { ilike, asc, type SQL, and, eq, count } from "drizzle-orm";
 import z from "zod";
 import { checkUserRole } from "./hooks/check-user-role.ts";
 import { checkRequestJWT } from "./hooks/check-request-jwt.ts";
 &nbsp;
-export const getCoursesRoute: FastifyPluginAsyncZod = async (server) =&gt; {
+export const getUsersRoute: FastifyPluginAsyncZod = async (server) =&gt; {
   server.get(
-    "/courses",
+    "/users",
     {
       schema: {
+        security: [{ bearerAuth: [] }],
         preHandler: [checkRequestJWT, checkUserRole("manager")],
-        tags: ["courses"],
-        summary: "Get all courses",
+        tags: ["users"],
+        summary: "Get all users",
         querystring: z.object({
           search: z.string().optional(),
-          orderBy: z.enum(["id", "title"]).optional().default("id"),
+          orderBy: z.enum(["id", "name"]).optional().default("id"),
           page: z.coerce.number().optional().default(1),
         }),
         response: {
           200: z.object({
-            courses: z.array(
+            users: z.array(
               z.object({
                 id: z.uuid(),
-                title: z.string(),
-                description: z.string().nullable(),
-                enrollments: z.number(),
+                name: z.string(),
+                email: z.string().email(),
+                role: z.enum(["student", "manager"]),
               })
             ),
             total: z.number(),
@@ -234,34 +235,33 @@ export const getCoursesRoute: FastifyPluginAsyncZod = async (server) =&gt; {
       },
     },
     async (request, reply) =&gt; {
-      const { search, orderBy, page } = request.query;
+<span class="cstat-no" title="statement not covered" >      const { search, orderBy, page } = request.query;</span>
 &nbsp;
-      const conditions: SQL[] = [];
+<span class="cstat-no" title="statement not covered" >      const conditions: SQL[] = [];</span>
 &nbsp;
-      if (search) {
-        conditions.push(ilike(courses.title, `%${search}%`));
-      }
+<span class="cstat-no" title="statement not covered" >      if (search) {</span>
+<span class="cstat-no" title="statement not covered" >        conditions.push(ilike(users.name, `%${search}%`));</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 &nbsp;
-      const [result, total] = await Promise.all([
-        db
-          .select({
-            id: courses.id,
-            title: courses.title,
-            description: courses.description,
-            enrollments: count(enrollments.id),
-          })
-          .from(courses)
-          .leftJoin(enrollments, eq(enrollments.courseId, courses.id))
-          .orderBy(asc(courses[orderBy]))
-          .offset((page - 1) * 10)
-          .limit(10)
-          .where(and(...conditions))
-          .groupBy(courses.id),
-        db.$count(courses, and(...conditions)),
-      ]);
+<span class="cstat-no" title="statement not covered" >      const [result, total] = await Promise.all([</span>
+<span class="cstat-no" title="statement not covered" >        db</span>
+<span class="cstat-no" title="statement not covered" >          .select({</span>
+<span class="cstat-no" title="statement not covered" >            id: users.id,</span>
+<span class="cstat-no" title="statement not covered" >            name: users.name,</span>
+<span class="cstat-no" title="statement not covered" >            email: users.email,</span>
+<span class="cstat-no" title="statement not covered" >            role: users.role,</span>
+<span class="cstat-no" title="statement not covered" >          })</span>
+<span class="cstat-no" title="statement not covered" >          .from(users)</span>
+<span class="cstat-no" title="statement not covered" >          .orderBy(asc(users[orderBy]))</span>
+<span class="cstat-no" title="statement not covered" >          .offset((page - 1) * 2)</span>
+<span class="cstat-no" title="statement not covered" >          .limit(10)</span>
+<span class="cstat-no" title="statement not covered" >          .where(and(...conditions))</span>
+<span class="cstat-no" title="statement not covered" >          .groupBy(users.id),</span>
+<span class="cstat-no" title="statement not covered" >        db.$count(users, and(...conditions)),</span>
+<span class="cstat-no" title="statement not covered" >      ]);</span>
 &nbsp;
-      return reply.send({ courses: result, total });
-    }
+<span class="cstat-no" title="statement not covered" >      return reply.send({ users: result, total });</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
   );
 };
 &nbsp;</pre></td></tr></table></pre>
