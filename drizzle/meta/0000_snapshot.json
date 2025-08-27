@@ -1,5 +1,5 @@
 {
-  "id": "b6576102-5653-44ce-81bf-70df32c4703b",
+  "id": "2c4f00b5-2a20-4899-82bd-5c427b01c792",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -35,9 +35,7 @@
         "courses_title_unique": {
           "name": "courses_title_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "title"
-          ]
+          "columns": ["title"]
         }
       },
       "policies": {},
@@ -103,12 +101,8 @@
           "name": "enrollments_userId_users_id_fk",
           "tableFrom": "enrollments",
           "tableTo": "users",
-          "columnsFrom": [
-            "userId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["userId"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -116,12 +110,8 @@
           "name": "enrollments_courseId_courses_id_fk",
           "tableFrom": "enrollments",
           "tableTo": "courses",
-          "columnsFrom": [
-            "courseId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["courseId"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -177,9 +167,7 @@
         "users_email_unique": {
           "name": "users_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         }
       },
       "policies": {},
@@ -191,10 +179,7 @@
     "public.user_role": {
       "name": "user_role",
       "schema": "public",
-      "values": [
-        "student",
-        "manager"
-      ]
+      "values": ["student", "manager"]
     }
   },
   "schemas": {},

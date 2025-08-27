@@ -31,7 +31,7 @@ npm install
 docker compose up -d
 ```
 
-4. Crie um arquivo `.env` na raiz com:
+> **Nota**: Se preferir não usar Docker, você pode configurar uma instância PostgreSQL local e ajustar a `DATABASE_URL` no arquivo `.env` conforme necessário. 4. Crie um arquivo `.env` na raiz com:
 
 ```bash
 # URL do banco (Docker local padrão)
@@ -47,21 +47,13 @@ NODE_ENV=development
 npm run db:migrate
 ```
 
-(opcional) Para inspecionar o schema/estado com o Drizzle Studio:
-
-````bash
-## Instalação das dependências principais
-
-Para instalar Drizzle ORM, Drizzle Kit, PostgreSQL driver e tipos do Node.js:
+6. (Opcional) Popule o banco com dados sementes:
 
 ```bash
-npm install drizzle-orm drizzle-kit pg
-npm install --save-dev @types/node
-````
+npm run db:seed
+```
 
-## Interface do Drizzle Studio
-
-O Drizzle Studio permite visualizar e editar dados do banco de dados de forma gráfica. Para abrir:
+7. (Opcional) Para inspecionar o schema/estado com o Drizzle Studio:
 
 ```bash
 npm run db:studio
@@ -83,6 +75,11 @@ npm run db:studio
 ````
 
 ## Executando o servidor
+
+```bash
+npm run dev
+```
+
 - Porta padrão: `http://localhost:3333`
 - Logs legíveis habilitados
 - Documentação da API (em dev): `http://localhost:3333/docs`

@@ -1,68 +1,64 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Code coverage report for src/routes/create-course.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
     <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type='text/css'>
-        .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
-        }
+    <style type="text/css">
+      .coverage-summary .sorter {
+        background-image: url(../../sort-arrow-sprite.png);
+      }
     </style>
-</head>
-    
-<body>
-<div class='wrapper'>
-    <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/routes</a> create-course.ts</h1>
-        <div class='clearfix'>
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Statements</span>
-                <span class='fraction'>37/37</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Lines</span>
-                <span class='fraction'>37/37</span>
-            </div>
-        
-            
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="pad1">
+        <h1>
+          <a href="../../index.html">All files</a> /
+          <a href="index.html">src/routes</a> create-course.ts
+        </h1>
+        <div class="clearfix">
+          <div class="fl pad1y space-right2">
+            <span class="strong">100% </span>
+            <span class="quiet">Statements</span>
+            <span class="fraction">30/30</span>
+          </div>
+
+          <div class="fl pad1y space-right2">
+            <span class="strong">100% </span>
+            <span class="quiet">Branches</span>
+            <span class="fraction">2/2</span>
+          </div>
+
+          <div class="fl pad1y space-right2">
+            <span class="strong">100% </span>
+            <span class="quiet">Functions</span>
+            <span class="fraction">1/1</span>
+          </div>
+
+          <div class="fl pad1y space-right2">
+            <span class="strong">100% </span>
+            <span class="quiet">Lines</span>
+            <span class="fraction">30/30</span>
+          </div>
         </div>
         <p class="quiet">
-            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+          Press <em>n</em> or <em>j</em> to go to the next uncovered block,
+          <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
         <template id="filterTemplate">
-            <div class="quiet">
-                Filter:
-                <input type="search" id="fileSearch">
-            </div>
+          <div class="quiet">
+            Filter:
+            <input type="search" id="fileSearch" />
+          </div>
         </template>
-    </div>
-    <div class='status-line high'></div>
-    <pre><table class="coverage">
+      </div>
+      <div class="status-line high"></div>
+      <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
 <a name='L3'></a><a href='#L3'>3</a>
@@ -96,36 +92,30 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a>
-<a name='L42'></a><a href='#L42'>42</a>
-<a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -172,47 +162,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Importa o tipo do plugin Fastify com suporte ao Zod para validação de schemas
-import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod";
-// Importa a instância do banco de dados
-import { db } from "../database/client.ts";
-// Importa o schema da tabela de cursos
-import { courses } from "../database/schema.ts";
-// Importa o Zod para validação dos dados
-import z from "zod";
-// Middleware para validar o JWT do usuário
-import { checkRequestJWT } from "./hooks/check-request-jwt.ts";
-// Middleware para validar se o usuário tem permissão de manager
-import { checkUserRole } from "./hooks/check-user-role.ts";
+<span class="cline-any cline-yes">4x</span></td><td class="text"><pre class="prettyprint lang-js">import type { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
+import { db } from '../database/client.ts'
+import { courses } from '../database/schema.ts'
+import z from 'zod'
+import { checkRequestJWT } from './hooks/check-request-jwt.ts'
+import { checkUserRole } from './hooks/check-user-role.ts'
 &nbsp;
 // Função que registra a rota de criação de curso
 export const createCourseRoute: FastifyPluginAsyncZod = async (server) =&gt; {
-  // Define a rota POST /courses
-  server.post(
-    "/courses",
-    {
-      // Middlewares: exige autenticação JWT e permissão de manager
-      preHandler: [checkRequestJWT, checkUserRole("manager")],
-      schema: {
-        tags: ["courses"], // Tag para documentação
-        summary: "Create a course", // Resumo para docs
-        // Validação do corpo da requisição
-        body: z.object({
-          title: z.string().min(5, "Título precisa ter 5 caracteres"), // Título do curso
-          description: z
-            .string()
-            .min(10, "Descrição precisa ter 10 caracteres"), // Descrição do curso
-        }),
-        // Validação da resposta
-        response: {
-          201: z
-            .object({ courseId: z.uuid() })
-            .describe("Curso criado com sucesso!"), // Mensagem de sucesso
-        },
-      },
+  server.post('/courses', {
+    preHandler: [
+      checkRequestJWT,
+      checkUserRole('manager'),
+    ],
+    schema: {
+      tags: ['courses'],
+      summary: 'Create a course',
+      body: z.object({
+        title: z.string().min(5, 'Título precisa ter 5 caracteres'),
+      }),
+      response: {
+        201: z.object({ courseId: z.uuid() }).describe('Curso criado com sucesso!')
+      }
     },
     // Handler da rota: insere o curso no banco e retorna o id
     async (request, reply) =&gt; {
@@ -233,21 +206,27 @@ export const createCourseRoute: FastifyPluginAsyncZod = async (server) =&gt; {
 };
 &nbsp;</pre></td></tr></table></pre>
 
-                <div class='push'></div><!-- for sticky footer -->
-            </div><!-- /wrapper -->
-            <div class='footer quiet pad2 space-top1 center small'>
-                Code coverage generated by
-                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-27T04:45:33.247Z
-            </div>
-        <script src="../../prettify.js"></script>
-        <script>
-            window.onload = function () {
-                prettyPrint();
-            };
-        </script>
-        <script src="../../sorter.js"></script>
-        <script src="../../block-navigation.js"></script>
-    </body>
+      <div class="push"></div>
+      <!-- for sticky footer -->
+    </div>
+    <!-- /wrapper -->
+    <div class="footer quiet pad2 space-top1 center small">
+      Code coverage generated by
+      <a
+        href="https://istanbul.js.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >istanbul</a
+      >
+      at 2025-08-14T23:40:27.270Z
+    </div>
+    <script src="../../prettify.js"></script>
+    <script>
+      window.onload = function () {
+        prettyPrint();
+      };
+    </script>
+    <script src="../../sorter.js"></script>
+    <script src="../../block-navigation.js"></script>
+  </body>
 </html>
-    

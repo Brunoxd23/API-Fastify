@@ -9,6 +9,8 @@ test("create a course", async () => {
 
   const { token } = await makeAuthenticatedUser("manager");
 
+  const { token } = await makeAuthenticatedUser("manager");
+
   const response = await request(server.server)
     .post("/courses")
     .set("Content-Type", "application/json")
