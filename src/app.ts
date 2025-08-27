@@ -31,8 +31,23 @@ if (process.env.NODE_ENV === "development") {
   server.register(fastifySwagger, {
     openapi: {
       info: {
-        title: "Desafio Node.js",
+        title: "API Fastify Moderna",
         version: "1.0.0",
+        description:
+          "Documentação interativa e moderna da API com Fastify, Drizzle ORM e Neon.",
+      },
+      servers: [
+        { url: "http://localhost:3333", description: "Local development" },
+      ],
+      components: {
+        securitySchemes: {
+          bearerAuth: {
+            type: "apiKey",
+            in: "header",
+            name: "Authorization",
+            description: "Informe apenas o token JWT, sem o prefixo Bearer.",
+          },
+        },
       },
     },
     transform: jsonSchemaTransform,
@@ -40,6 +55,13 @@ if (process.env.NODE_ENV === "development") {
 
   server.register(scalarAPIReference, {
     routePrefix: "/docs",
+    configuration: {
+      title: "API Fastify Moderna",
+      theme: "deepSpace",
+      layout: "modern",
+      hideDownloadButton: false,
+      showSidebar: true,
+    },
   });
 }
 
