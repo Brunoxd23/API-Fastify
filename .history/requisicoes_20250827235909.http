@@ -1,22 +1,11 @@
-
-POST http://localhost:3333/sessions
-Content-Type: application/json
-
-{
-  "email": "fabricia@bol.com",
-  "password": "123456",
-  "role": "manager"
-}
-
-
 ###
 POST http://localhost:3333/courses
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZjkwOWVjMi1jMDNkLTQ4YTItOTMyMi0zYzVjOWQ2NzFlOTkiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc1NjM0OTk1NH0.Cv972VNlX9Z_2yfLtPmz6kvBKTJQNFPKu946cWYhpNw
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyNzczYzgxMC1jZGEyLTRhZDUtYjU3OC1lZmU0MjM1ZTFmZjAiLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTc1NjM0OTc0MH0.ySNyh1yGiLYQpTnsV-2BqwgJeC77Z2gh8FOOLTxNYJA
 
 {
-  "title": "Curso de node.js",
-  "description": "Aprenda node.js do zero"
+  "title": "Curso de JavaScript",
+  "description": "Aprenda Next.js do zero"
 }
 
 ###
@@ -26,10 +15,18 @@ GET http://localhost:3333/courses?orderBy=title
 ###
 
 GET http://localhost:3333/courses
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZjkwOWVjMi1jMDNkLTQ4YTItOTMyMi0zYzVjOWQ2NzFlOTkiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc1NjM0OTk1NH0.Cv972VNlX9Z_2yfLtPmz6kvBKTJQNFPKu946cWYhpNw
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3YzI4MGNhMi0xNjdlLTRjZDEtOTBjOC1kODM4NmEzNmVlOWYiLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTc1NjI1MTQ1OH0.Aa35k2rArOXPg1QqqVAYKqD7JdyL19ONf752L0SZx9g
 
 ###
 
+POST http://localhost:3333/sessions
+Content-Type: application/json
+
+{
+  "email": "fabricia@bol.com",
+  "password": "123456",
+  "role": "manager"
+}
 
 ###
 GET http://localhost:3333/users/b02b5b23-1ce6-4d27-b48c-0b171cfac0ab
